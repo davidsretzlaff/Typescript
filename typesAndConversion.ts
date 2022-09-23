@@ -2,7 +2,7 @@ let myName: any = "david retzlaff";
 
 // same thing
 let count = (<string>myName).length;
-let count = (myName as string).length;
+let count2 = (myName as string).length;
 
 let num:number = 2;
 
