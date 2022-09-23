@@ -6,6 +6,8 @@ interface AnimalInterface{
     eat()
 }
 class Animal implements AnimalInterface{
+    protected attrProtect: string;
+    private attrPrivate: string;
     // create constructor and create attributes of class
     constructor(public name:string, public color:string){
     }
@@ -27,13 +29,19 @@ class Dog extends Animal{
     eat(){
         //super.eat call eat method from animal
         super.eat();
+        console.log('Eat how dog');
 
-        console.log('Eat how dog')
+        //only see difference between protect and private
+        super.attrProtect = 'i can access';
+        //super.attrPrivate = 'i cant access';
     }
 }
 
 let bud : Dog = new Dog('Bud','black');
-bud.Run();
+bud.eat();
+bud.breed = 'PitBull';
 
-// here i am saying that the variable is type Animal
-let myAnimalType: Animal = new Animal('Dog','black');
+//only see difference between protect and private
+//bud.attrProtect = 'i cant access';
+//bud.attrPrivate = 'i cant access';
+
